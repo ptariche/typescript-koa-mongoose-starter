@@ -6,7 +6,7 @@ Typescript Koa Mongoose Starter is the beginning of folks who want to play with 
 
 # Why did I do this?
 
-  - I wanted to entertian the idea of possibly running Typescript for our backend at my job
+  - I wanted to entertain the idea of possibly running Typescript for our backend at my job
   - I haven't touched typescript in 6 years and wanted to see how much it has matured
   - I recently played with Deno as I love Rust and ran into several issues 
 
