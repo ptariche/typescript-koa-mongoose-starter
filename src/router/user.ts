@@ -1,4 +1,4 @@
-import {Joi as JOI, Spec, } from 'koa-joi-router';
+import {Joi as JOI, Spec } from 'koa-joi-router';
 import {SchemaMap} from 'joi';
 
 import HELPER from './helper';
@@ -34,6 +34,28 @@ class UserRouter {
       })
     },
     handler: [HELPER.validation, USER_CONTROLLER.create]
+  });
+
+  public static update:Spec = ({
+    method: HELPER.methods.PUT,
+    path: '/user/:id',
+    validate: {
+      continueOnError: true,
+      type: HELPER.contentType.JSON,
+      body: JOI.object({
+        first_name: JOI.string().alphanum().max(HELPER.defaults.length),
+        last_name: JOI.string().alphanum().max(HELPER.defaults.length),
+      }).options({stripUnknown: true}),
+      output: Object.assign({}, HELPER.errorResponse(400), HELPER.validationErrorResponse(), {
+        200: {
+          body: JOI.object({
+            code: 200,
+            data: JOI.object(UserRouter.userOutput)
+          }).options({stripUnknown: false})
+        }
+      })
+    },
+    handler: [HELPER.validation, USER_CONTROLLER.update]
   });
 
   public static read:Spec = ({

@@ -7,6 +7,7 @@ type JwtFunctionResponse = { middleware: KoaMiddleware, authenticate: KoaMiddlew
 enum Responses {
   NOT_FOUND            = 'Not Found',
   CANT_CREATE_USER     = 'Unable to create user',
+  CANT_UPDATE_USER     = 'Unable to update user',
   NO_ACCESS_USER       = 'You do not have access to this User',
   INTERNAL_ERROR       = 'An internal server has error occured',
   SOMETHING_WENT_WRONG = 'Something went very wrong',

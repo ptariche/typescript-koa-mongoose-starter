@@ -1,4 +1,4 @@
-import {Joi as JOI, Spec, } from 'koa-joi-router';
+import {Joi as JOI, Spec } from 'koa-joi-router';
 
 import HELPER from './helper';
 import LOGIN_CONTROLLER from '../controller/login';

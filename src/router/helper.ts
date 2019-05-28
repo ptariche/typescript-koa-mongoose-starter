@@ -24,8 +24,8 @@ class Helper {
   public static contentType = contentType;
   public static validation  = async (ctx: BaseContext, next: Function) => {
     if (ctx.invalid) {
-      let body     = ctx.invalid.body || ctx.invalid.query || ctx.invalid.params;  
-      let response = body && body.details ? body.details : [];
+      let body:{details: Array<object>}         = ctx.invalid.body || ctx.invalid.query || ctx.invalid.params;  
+      let response:Array<object|undefined|null> = body && body.details ? body.details : [];
 
       ctx.respond(412, response)
     } else {

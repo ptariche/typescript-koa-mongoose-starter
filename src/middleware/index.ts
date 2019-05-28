@@ -38,7 +38,7 @@ class Middleware {
         const token = Middleware.resolveAuthorizationHeader(ctx);
       
         if (token !== null) {
-          const decodedToken = await Jwt.verify(token).catch( err => null);
+          const decodedToken:object|null = await Jwt.verify(token).catch( err => null);
           if (decodedToken) {
             ctx.state.user = decodedToken;
             return await next();

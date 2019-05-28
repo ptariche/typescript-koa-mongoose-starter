@@ -128,7 +128,7 @@ An endpoint that has input and output validation that returns the following info
 
 |                |Type                          
 |----------------|-------------------------------
-|id | String          
+|user_id | String          
 |token | String          
 
 #### /user/{user_id} - GET * Authenticated Route

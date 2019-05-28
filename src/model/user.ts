@@ -27,14 +27,14 @@ const userSchema = new MONGOOSE.Schema({
   password: String
 }, { timestamps: true });
 
-userSchema.pre('save', function save(next) {
+userSchema.pre('save', function save(next: Function) {
   const ctx = this;
   
   if (!this.isModified('password')) { return next(); }
 
   BCRYPT.genSalt(10, (err, salt) => {
     if (err) { return next(err); }
-    BCRYPT.hash(this.get('password'), salt, (err: MONGOOSE.Error, hash) => {
+    BCRYPT.hash(this.get('password'), salt, (err: MONGOOSE.Error, hash: string) => {
       if (err) { return next(err); }
       ctx.set('password', hash);
       next();
@@ -42,7 +42,7 @@ userSchema.pre('save', function save(next) {
   });
 });
 
-const comparePassword: comparePasswordFunction = function (candidatePassword) {
+const comparePassword: comparePasswordFunction = function (candidatePassword: string) {
   const ctx = this;
   return new Promise ((resolve, reject) => {
     BCRYPT.compare(candidatePassword, ctx.get('password'), (err: MONGOOSE.Error, isMatch: boolean) => {
