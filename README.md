@@ -133,7 +133,7 @@ An endpoint that has input and output validation that returns the following info
 
 #### /user/{user_id} - GET * Authenticated Route
 
-An Authorization Header must be present with `Bearer <jwtToken>` returned from login
+An Authorization Header must be present with `Bearer <jwtToken>` returned from login.
 An endpoint that returns the user object., and has output validation. This endpoint requires a valid JWT Token
 
 ###### Output - JSON
@@ -144,6 +144,30 @@ An endpoint that returns the user object., and has output validation. This endpo
 |first_name          |String           
 |last_name          | String
 |email          |String
+
+##### /user/{user_id} - PUT
+
+An Authorization Header must be present with `Bearer <jwtToken>` returned from login.
+An endpoint that updates the input of a document and output validation that returns the following information.
+
+###### INPUT - JSON
+
+
+|                |Type                          
+|----------------|-------------------------------
+|first_name          |String           
+|last_name          | String
+
+
+###### Output - JSON
+
+|                |Type                          
+|----------------|-------------------------------
+|id | String          
+|first_name          |String           
+|last_name          | String
+|email          |String
+
 
 #### Testing
 * Uses Jest, Supertest, Chai and MongoDB Memory Server
@@ -178,6 +202,7 @@ An endpoint that returns the user object., and has output validation. This endpo
     |   |-- controller
     |   |   |-- blackhole.ts
     |   |   |-- login.ts
+    |   |   |-- health.ts
     |   |   |-- user.ts
     |   |-- lib
     |   |   |-- jwt.ts
