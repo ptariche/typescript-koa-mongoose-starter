@@ -55,6 +55,13 @@ $ npm install
 $ npm run compose-up
 ```
 
+### Generate Documentation
+The documentation is outputted in a documentation directory in the root directory.
+
+```sh
+$ npm run documentation
+```
+
 ### Development
 
 The service runs on port 3000 by default
