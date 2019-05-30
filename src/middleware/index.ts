@@ -2,6 +2,7 @@ import { BaseContext, Middleware as KoaMiddleware} from 'koa';
 import { Responses, JwtFunctionResponse} from './../types/';
 import JWT from './../lib/jwt';
 
+
 type JwtFunction           = (secret: string) => JwtFunctionResponse;
 type AuthorizationFunction = (ctx: BaseContext) => string|null;
 
@@ -38,7 +39,7 @@ class Middleware {
         const token = Middleware.resolveAuthorizationHeader(ctx);
       
         if (token !== null) {
-          const decodedToken:object|null = await Jwt.verify(token).catch( err => null);
+          const decodedToken:{id: string}|null = await Jwt.verify(token).catch( err => null);
           if (decodedToken) {
             ctx.state.user = decodedToken;
             return await next();

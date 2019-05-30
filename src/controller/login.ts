@@ -1,12 +1,11 @@
-import { BaseContext } from 'koa';
-import { Responses } from './../types';
+import { Responses, ModifiedContext } from './../types';
 
 import UserModel, {UserDocument, UserType} from './../model/user';
 
 type InputBodyType = {email: string, password: string};
 
 class Login {
-  public static create = async (ctx: BaseContext) => {
+  public static create = async (ctx: ModifiedContext) => {
     const { 
       email, password
     } = <InputBodyType>ctx.request.body;

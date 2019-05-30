@@ -1,8 +1,13 @@
-import { Middleware as KoaMiddleware} from 'koa';
+import { Middleware as KoaMiddleware, BaseContext} from 'koa';
+import JWT from './../lib/jwt';
 
 type ConfigServerType    = { port: number, mongo_uri: string, jwt_secret: string };
 type ConfigJwtType       = { secret: string };
 type JwtFunctionResponse = { middleware: KoaMiddleware, authenticate: KoaMiddleware };
+type UserStateType       = { id: string };
+type ConfigStateType     = {
+  user: UserStateType|null
+};
 
 enum Responses {
   NOT_FOUND            = 'Not Found',
@@ -14,9 +19,16 @@ enum Responses {
   INVALID_CREDS        = 'Invalid Credentials'
 };
 
+interface ModifiedContext extends BaseContext {
+  jwt: JWT,
+  respond: (status: number, body: object|string) => Function
+  state: ConfigStateType
+}
+
 export {
   ConfigServerType,
   ConfigJwtType,
   Responses,
-  JwtFunctionResponse
+  JwtFunctionResponse,
+  ModifiedContext
 };

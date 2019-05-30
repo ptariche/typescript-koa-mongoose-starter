@@ -1,6 +1,5 @@
-import { BaseContext } from 'koa';
-
 import {version} from './../../package.json';
+import { BaseContext } from 'koa';
 
 enum STATUS {
   PASS = 'pass',

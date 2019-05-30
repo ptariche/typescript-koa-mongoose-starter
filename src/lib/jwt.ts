@@ -3,7 +3,7 @@ import JWT from 'jsonwebtoken';
 import {ConfigJwtType} from './../types/';
 
 type VerifyFunction = (token:string|null) => Promise<object|string|null>;
-type SignFunction   = (user: {id: string}) => Promise<object|string>;
+type SignFunction   = (user: {id: string}) => Promise<string>;
 
 class Jwt {
   protected secret:string;

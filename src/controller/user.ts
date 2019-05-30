@@ -1,5 +1,4 @@
-import { BaseContext } from 'koa';
-import { Responses } from './../types';
+import { Responses, ModifiedContext } from './../types';
 
 import UserModel, {UserDocument, UserType} from './../model/user';
 
@@ -7,7 +6,7 @@ type InputCreateBodyType = {first_name: string, last_name: string, password: str
 type InputUpdateBodyType = {first_name: string, last_name: string};
 
 class UserController {
-  public static create = async (ctx: BaseContext) => {
+  public static create = async (ctx: ModifiedContext) => {
     const body:InputCreateBodyType      = ctx.request.body;
     const createUser:UserDocument|null  = await UserModel.create(body).catch( err => null);
 
@@ -19,7 +18,7 @@ class UserController {
     }
   };
 
-  public static read = async (ctx: BaseContext) => {
+  public static read = async (ctx: ModifiedContext) => {
     if (!ctx.state.user || ctx.params.id !== ctx.state.user.id) return ctx.respond(403, Responses.NO_ACCESS_USER);
 
     const user:UserDocument|null = await UserModel.findById(ctx.state.user.id);
@@ -32,7 +31,7 @@ class UserController {
     }
   };
 
-  public static update = async (ctx: BaseContext) => {
+  public static update = async (ctx: ModifiedContext) => {
     if (!ctx.state.user || ctx.params.id !== ctx.state.user.id) return ctx.respond(403, Responses.NO_ACCESS_USER);
 
     const body:InputUpdateBodyType      = ctx.request.body;

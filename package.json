@@ -1,6 +1,6 @@
 {
   "name": "typescript-koa-mongoose-starter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "When Function Found Type",
   "main": "./src/index.ts",
   "scripts": {
@@ -35,7 +35,6 @@
   },
   "homepage": "https://github.com/ptariche/typescript-koa-mongoose-starter#readme",
   "dependencies": {
-    "@godaddy/terminus": "^4.1.2",
     "@koa/cors": "^2.2.3",
     "bcrypt": "^3.0.6",
     "bluebird": "^3.5.5",
@@ -66,6 +65,6 @@
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.1"
   }
 }
