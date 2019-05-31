@@ -8,7 +8,7 @@ import JWT from './../lib/jwt';
  * @param port - A Port to run the server on
  * @param mongo_uri - The mongo uri mongo://127.0.0.1:27017/test
  * @param jwt_secret - The secret JWT uses to create a signature for the payload
- */
+*/
 type ConfigServerType    = { port: number, mongo_uri: string, jwt_secret: string };
 
 /**
@@ -16,13 +16,13 @@ type ConfigServerType    = { port: number, mongo_uri: string, jwt_secret: string
  * This method is part of the JWT Config.
  *
  * @param secret - The secret JWT uses to create a signature for the payload
- */
+*/
 type ConfigJwtType       = { secret: string };
 
 /**
  * @param middleware - A Koa Middleware thar injects JWT into Koa Context
  * @param authenticate - A Koa Middleware that checks if a jwt header is valid and allows the next middleware if so
- */
+*/
 type JwtFunctionResponse = { middleware: KoaMiddleware, authenticate: KoaMiddleware };
 
 type UserStateType       = { id: string };
@@ -30,7 +30,7 @@ type UserStateType       = { id: string };
 /**
  * @remarks
  * Extends ctx.state.user type to the base context
- */
+*/
 type ConfigStateType     = {
   user: UserStateType|null
 };
@@ -38,7 +38,7 @@ type ConfigStateType     = {
 /**
  * @remarks
  * Response options
- */
+*/
 enum Responses {
   NOT_FOUND            = 'Not Found',
   CANT_CREATE_USER     = 'Unable to create user',
@@ -52,7 +52,7 @@ enum Responses {
 /**
  * @remarks
  * Extends the base context with KWT, Respond and State
- */
+*/
 interface ModifiedContext extends BaseContext {
   jwt: JWT,
   respond: (status: number, body: object|string) => Function

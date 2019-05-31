@@ -59,9 +59,12 @@ class Middleware {
   };
 
   public static respond:KoaMiddleware = async (ctx: BaseContext, next: Function) => {
+    /**
+     * @param status - The http code
+     * @param body - An Object or string input depending on the http code
+    */
     ctx.respond = (status: number, body: object|string) => {
       ctx.status        = status;
-
       let error:boolean = false;
 
       if (status >= 299 || status < 200) {
