@@ -2,7 +2,19 @@ import { Responses, ModifiedContext } from './../types';
 
 import UserModel, {UserDocument, UserType} from './../model/user';
 
-type InputCreateBodyType = {first_name: string, last_name: string, password: string, email: true};
+/**
+ * @param first_name - A valid string that has already been validated by JOI
+ * @param last_name - A valid string that has already been validated by JOI
+ * @param password - A valid string that has already been validated by JOI
+ * @param email - A valid email that has already been validated by JOI
+ */
+type InputCreateBodyType = {first_name: string, last_name: string, password: string, email: boolean};
+
+
+/**
+ * @param first_name - A valid string that has already been validated by JOI
+ * @param last_name - A valid string that has already been validated by JOI
+ */
 type InputUpdateBodyType = {first_name: string, last_name: string};
 
 class UserController {

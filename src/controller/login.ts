@@ -2,6 +2,11 @@ import { Responses, ModifiedContext } from './../types';
 
 import UserModel, {UserDocument, UserType} from './../model/user';
 
+/**
+ *
+ * @param email - A valid email that has already been validated by JOI
+ * @param password - Password input that has been already validated by JOI
+ */
 type InputBodyType = {email: string, password: string};
 
 class Login {

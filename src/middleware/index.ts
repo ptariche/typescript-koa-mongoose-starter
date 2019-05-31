@@ -2,7 +2,10 @@ import { BaseContext, Middleware as KoaMiddleware} from 'koa';
 import { Responses, JwtFunctionResponse} from './../types/';
 import JWT from './../lib/jwt';
 
-
+/**
+ * @param secret - The JWT Secret
+ * @returns Returns a function for Koa middleware injection
+*/
 type JwtFunction           = (secret: string) => JwtFunctionResponse;
 type AuthorizationFunction = (ctx: BaseContext) => string|null;
 

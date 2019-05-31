@@ -42,6 +42,12 @@ userSchema.pre('save', function save(next: Function) {
   });
 });
 
+/**
+ * @remarks
+ * Compare the bcrypted password
+ *
+ * @param candidatePassword - The string to bcrypt and compare to the real password
+ */
 const comparePassword: comparePasswordFunction = function (candidatePassword: string) {
   const ctx = this;
   return new Promise ((resolve, reject) => {
