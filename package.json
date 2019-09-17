@@ -44,7 +44,7 @@
     "koa-helmet": "^4.2.1",
     "koa-joi-router": "^5.2.0",
     "koa-morgan": "^1.0.1",
-    "mongoose": "^5.7.0"
+    "mongoose": "^5.7.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -65,7 +65,7 @@
     "nodemon": "^1.19.2",
     "supertest": "^4.0.2",
     "ts-jest": "^24.1.0",
-    "ts-node": "^8.3.0",
+    "ts-node": "^8.4.1",
     "typedoc": "^0.15.0",
     "typescript": "^3.6.3"
   }
