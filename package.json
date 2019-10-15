@@ -40,33 +40,33 @@
     "bcrypt": "^3.0.6",
     "bluebird": "^3.7.0",
     "jsonwebtoken": "^8.5.1",
-    "koa": "^2.8.2",
+    "koa": "^2.10.0",
     "koa-helmet": "^4.2.1",
     "koa-joi-router": "^5.2.0",
     "koa-morgan": "^1.0.1",
-    "mongoose": "^5.7.3"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
-    "@types/bluebird": "^3.5.27",
+    "@types/bluebird": "^3.5.28",
     "@types/chai": "^4.2.3",
-    "@types/jest": "^24.0.18",
+    "@types/jest": "^24.0.19",
     "@types/jsonwebtoken": "^8.3.4",
     "@types/koa": "^2.0.50",
     "@types/koa-helmet": "^3.1.2",
     "@types/koa-joi-router": "^5.2.2",
     "@types/koa-morgan": "^1.0.4",
     "@types/koa__cors": "^2.2.3",
-    "@types/mongoose": "^5.5.19",
+    "@types/mongoose": "^5.5.20",
     "@types/supertest": "^2.0.8",
     "chai": "^4.2.0",
     "jest": "^24.9.0",
-    "mongodb-memory-server": "^5.2.6",
+    "mongodb-memory-server": "^5.2.8",
     "nodemon": "^1.19.3",
     "supertest": "^4.0.2",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.4.1",
     "typedoc": "^0.15.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   }
 }
