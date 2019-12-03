@@ -19,10 +19,10 @@ class UserRouter {
       continueOnError: true,
       type: HELPER.contentType.JSON,
       body: JOI.object({
-        first_name: JOI.string().alphanum().max(HELPER.defaults.length),
-        last_name: JOI.string().alphanum().max(HELPER.defaults.length),
-        email: JOI.string().lowercase().email(),
-        password: JOI.string().min(14).max(HELPER.defaults.length),
+        first_name: JOI.string().alphanum().max(HELPER.defaults.length).required(),
+        last_name: JOI.string().alphanum().max(HELPER.defaults.length).required(),
+        email: JOI.string().lowercase().email().required(),
+        password: JOI.string().min(14).max(HELPER.defaults.length).required(),
       }).options({stripUnknown: true}),
       output: Object.assign({}, HELPER.errorResponse(400), HELPER.validationErrorResponse(), {
         201: {
@@ -42,6 +42,9 @@ class UserRouter {
     validate: {
       continueOnError: true,
       type: HELPER.contentType.JSON,
+      params: JOI.object({
+        id: JOI.string().regex(HELPER.mongoObjectRegEx)
+      }),
       body: JOI.object({
         first_name: JOI.string().alphanum().max(HELPER.defaults.length),
         last_name: JOI.string().alphanum().max(HELPER.defaults.length),
@@ -64,7 +67,7 @@ class UserRouter {
     validate: {
       continueOnError: true,
       params: JOI.object({
-        id: JOI.string().regex(/^[a-f\d]{24}$/i)
+        id: JOI.string().regex(HELPER.mongoObjectRegEx)
       }),
       output: Object.assign({}, HELPER.errorResponse(403), HELPER.errorResponse(400), HELPER.validationErrorResponse(), {
         200: {

@@ -22,6 +22,7 @@ class Helper {
   public static defaults    = defaults;
   public static methods     = methods;
   public static contentType = contentType;
+  public static mongoObjectRegEx = /^[a-f\d]{24}$/i;
   public static validation  = async (ctx: BaseContext, next: Function) => {
     if (ctx.invalid) {
       let body:{details: Array<object>}         = ctx.invalid.body || ctx.invalid.query || ctx.invalid.params;  
