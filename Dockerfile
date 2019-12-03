@@ -1,4 +1,4 @@
-FROM node:10.15
+FROM node:12.13
 
 ENV SOURCE=/opt/app/koa-mongoose-start
 

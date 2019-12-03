@@ -1,6 +1,6 @@
 {
   "name": "typescript-koa-mongoose-starter",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "When Function Found Type",
   "main": "./src/index.ts",
   "scripts": {
@@ -17,7 +17,7 @@
     "watch": "env ./config.env && nodemon --watch 'src/**/*' -e ts,tsx --exec ./node_modules/.bin/ts-node ./src/index.ts"
   },
   "engines": {
-    "node": "10.x.x"
+    "node": "12.x.x"
   },
   "repository": {
     "type": "git",
@@ -49,7 +49,7 @@
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
     "@types/bluebird": "^3.5.29",
-    "@types/chai": "^4.2.5",
+    "@types/chai": "^4.2.6",
     "@types/jest": "^24.0.23",
     "@types/jsonwebtoken": "^8.3.5",
     "@types/koa": "2.0.49",

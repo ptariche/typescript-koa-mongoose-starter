@@ -10,6 +10,10 @@ class LoginRouter {
     validate: {
       continueOnError: true,
       type: HELPER.contentType.JSON,
+      body: JOI.object({
+        email: JOI.string().lowercase().email(),
+        password: JOI.string().max(HELPER.defaults.length)
+      }).options({stripUnknown: true}),
       output: Object.assign({}, HELPER.errorResponse(401), HELPER.validationErrorResponse(), {
         200: {
           body: JOI.object({
