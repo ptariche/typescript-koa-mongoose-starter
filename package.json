@@ -38,13 +38,13 @@
   "dependencies": {
     "@koa/cors": "^2.2.3",
     "bcrypt": "^3.0.7",
-    "bluebird": "^3.7.1",
+    "bluebird": "^3.7.2",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
     "koa-helmet": "^4.2.1",
     "koa-joi-router": "^5.2.0",
     "koa-morgan": "^1.0.1",
-    "mongoose": "^5.7.11"
+    "mongoose": "^5.7.13"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -64,9 +64,9 @@
     "mongodb-memory-server": "^5.2.11",
     "nodemon": "^1.19.4",
     "supertest": "^4.0.2",
-    "ts-jest": "^24.1.0",
-    "ts-node": "^8.5.2",
-    "typedoc": "^0.15.2",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.5.4",
+    "typedoc": "^0.15.3",
     "typescript": "^3.7.2"
   }
 }
