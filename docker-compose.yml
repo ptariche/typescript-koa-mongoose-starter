@@ -15,4 +15,4 @@ services:
     container_name: "mongodb-type-mongoose-starter"
     ports:
       - 27017:27017
-    command: mongod --smallfiles --logpath=/dev/null
+    command: mongod
